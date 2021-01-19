@@ -18,3 +18,14 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::post('/login', 'LoginController@login');  //登录
 
+Route::group(['middleware' => ['auth:api']], function () {
+
+    Route::get('/userInfo', 'LoginController@userInfo');
+
+//    Route::resources([
+//
+//        'permission'                => 'PermissionController',
+//        'role'                      => 'RoleController',
+//    ]);
+
+});

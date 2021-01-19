@@ -20,4 +20,8 @@ class Admin extends Authenticatable implements JWTSubject
     {
         return [];
     }
+    public function authGroup()
+    {
+        return $this->belongsToMany(AuthGroup::class);
+    }
 }
