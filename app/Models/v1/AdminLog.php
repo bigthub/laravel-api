@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models\v1;
+
+use DateTimeInterface;
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * @property mixed nickname
+ * @property int admin_id
+ * @property string path
+ * @property string method
+ * @property string ip
+ * @property string input
+ */
+class AdminLog extends Model
+{
+
+}
