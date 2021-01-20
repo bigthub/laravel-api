@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+Route::post('/login', 'LoginController@login');  //登录
+
+Route::group(['middleware' => ['auth:api']], function () {
+
+    Route::get('/userInfo', 'LoginController@userInfo');
+
+//    Route::resources([
+//
+//        'permission'                => 'PermissionController',
+//        'role'                      => 'RoleController',
+//    ]);
+
 });
